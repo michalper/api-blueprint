@@ -668,13 +668,13 @@ Defined by an [URI template][uritemplate]:
 
 **-- or --**
 
-Defined by a resource [name (identifier)](#def-identifier) followed by an URI template enclosed in square brackets `[]`.
+Defined by a resource [name (identifier)](#def-identifier) followed by an [URI template][uritemplate] enclosed in square brackets `[]`.
 
     # <identifier> [<URI template>]
 
 **-- or --**
 
-Defined by an [HTTP request method][httpmethods] followed by URI template:
+Defined by an [HTTP request method][httpmethods] followed by [URI template][uritemplate]:
 
     # <HTTP request method> <URI template>
 
@@ -848,7 +848,15 @@ Defined by an [HTTP request method][httpmethods]:
 
 Defined by an action [name (identifier)](#def-identifier) followed by an [HTTP request method][httpmethods] enclosed in square brackets `[]`.
 
-    # <identifier> [<HTTP request method>]
+    ## <identifier> [<HTTP request method>]
+
+**-- or --**
+
+Defined by an action [name (identifier)](#def-identifier) followed by an [HTTP request method][httpmethods] and [URI template][uritemplate] enclosed in square brackets `[]`. This is also known by the name *Inline Action*.
+
+    # <identifier> [<HTTP request method> <URI template>]
+
+> **NOTE:** The inline action is still considered a part of the resource it is nested under even though it's URI template is different to that of the resource.
 
 #### Description
 Definition of at least one complete HTTP transaction as performed with the parent resource section. An action section **may** consists of multiple HTTP transaction examples for the given HTTP request method.
